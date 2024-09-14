@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Personal webpage showcasing research work">
+    <title>Welcome to Tonmoy's website</title>
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f2f5;
+            color: #333;
+            scroll-behavior: smooth;
+        }
+
+        header {
+            background: linear-gradient(135deg, #002f4b 30%, #dc4225);
+            color: white;
+            padding: 20px 0; /* Adjusted padding for better responsiveness */
+            text-align: center;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        header h1 {
+            font-size: 2em; /* Adjusted for better responsiveness */
+            margin: 0;
+            letter-spacing: 1px;
+        }
+
+        header p {
+            font-size: 1em; /* Adjusted for better responsiveness */
+            margin-top: 5px;
+        }
+
+        nav {
+            display: flex;
+            flex-wrap: wrap; /* Allows links to wrap on smaller screens */
+            justify-content: center;
+            background-color: #003366;
+            padding: 10px 0; /* Reduced padding for better responsiveness */
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav a {
+            margin: 0 10px; /* Reduced margin for better responsiveness */
+            text-decoration: none;
+            color: white;
+            font-weight: bold;
+            font-size: 1em; /* Adjusted for better responsiveness */
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: #f9d342;
+        }
+
+        section {
+            max-width: 90%; /* Use percentage for better responsiveness */
+            margin: 20px auto; /* Reduced margin for better spacing on small screens */
+            padding: 20px;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            display: none; /* Hide all sections initially */
+        }
+
+        section#about {
+            display: block; /* Only show "About Me" on page load */
+        }
+
+        h2 {
+            font-size: 1.5em; /* Adjusted for better responsiveness */
+            border-bottom: 3px solid #dc4225;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+
+        p, li {
+            font-size: 1em; /* Adjusted for better responsiveness */
+            line-height: 1.6;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        ul li {
+            background-color: #f9f9f9;
+            margin-bottom: 10px;
+            padding: 15px;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        ul li:hover {
+            background-color: #f1f1f1;
+        }
+
+        footer {
+            background-color: #002f4b;
+            color: white;
+            text-align: center;
+            padding: 15px 10px; /* Reduced padding for better responsiveness */
+            margin-top: 20px;
+        }
+
+        footer p {
+            margin: 0;
+        }
+
+        a {
+            color: #dc4225;
+        }
+
+        /* Add animations for sliding sections */
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateX(100%);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        section {
+            animation: slideIn 1s ease-in-out;
+        }
+
+        /* Style for the About Me section image */
+        .about-img {
+            max-width: 150px; /* Adjust this value to control the image size */
+            height: auto;
+            border-radius: 50%;
+            margin-right: 15px;
+        }
+
+        .about-content {
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap; /* Allows content to wrap on smaller screens */
+        }
+
+        /* Responsive Adjustments */
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 1.5em; /* Smaller font size for smaller screens */
+            }
+
+            header p {
+                font-size: 0.9em;
+            }
+
+            nav a {
+                margin: 0 5px;
+                font-size: 0.9em;
+            }
+
+            section {
+                padding: 15px;
+            }
+
+            .about-img {
+                max-width: 120px; /* Smaller image size for smaller screens */
+            }
+        }
+
+        @media (max-width: 480px) {
+            header h1 {
+                font-size: 1.2em; /* Even smaller font size for very small screens */
+            }
+
+            header p {
+                font-size: 0.8em;
+            }
+
+            nav a {
+                margin: 0 3px;
+                font-size: 0.8em;
+            }
+
+            .about-img {
+                max-width: 100px; /* Further reduced image size */
+            }
+        }
+    </style>
+    <script>
+        function showSection(id) {
+            // Hide all sections
+            document.querySelectorAll('section').forEach(function(section) {
+                section.style.display = 'none';
+            });
+            // Show the clicked section
+            document.getElementById(id).style.display = 'block';
+        }
+    </script>
+</head>
+<body>
+
+<header>
+    <h1>Tonmoy Deka</h1>
+    <p>Researcher / Exoplanet Atmospheres (Project-Fellow@NISER)</p>
+</header>
+
+<nav>
+    <a href="javascript:void(0)" onclick="showSection('about')">About Me</a>
+    <a href="javascript:void(0)" onclick="showSection('projects')">Projects</a>
+    <a href="javascript:void(0)" onclick="showSection('publications')">Publications</a>
+    <a href="javascript:void(0)" onclick="showSection('contact')">Contact</a>
+    <a href="javascript:void(0)" onclick="showSection('cv')">CV</a>
+    <a href="javascript:void(0)" onclick="showSection('links')">Links</a>
+</nav>
+
+<section id="about">
+    <h2>About Me</h2>
+    <div class="about-content">
+        <img src="/home/tonmoy/Website_dev/Tonmoy.jpg" alt="Tonmoy Deka" class="about-img">
+        <p>Hi! Thanks for visiting my website. I am Tonmoy Deka and I am interested in the study 
+            of planetary atmospheres, as they play a pivotal role in shaping a planet's characteristics. 
+            A compelling example is the contrast between Earth and Venus—despite their similar mass and radius, 
+            their surface conditions are drastically different. Venus, with a surface temperature over 450 K hotter
+             and an atmospheric pressure nearly 90 times that of Earth, owes these extremes entirely 
+             to the differences in atmospheric composition and dynamics. My current focus is on understanding 
+             exoplanetary atmospheres through a combination of modeling and observational techniques.
+              By studying these distant worlds, we can gain critical insights into the processes that
+               shape atmospheric diversity, enhance our understanding of planet formation, and explore
+                the potential for habitability in other planetary systems..
+        </p>
+    </div>
+</section>
+
+<section id="projects">
+    <h2>Projects</h2>
+    <ul>
+        <li>
+            <strong><em>Project 1: Developing an Exoplanet Atmospheric Retrieval Algorithm.</em></strong>
+            <p>This project focuses on creating a robust algorithm for the retrieval of atmospheric parameters of exoplanets. The main objectives include:</p>
+            <ul>
+                <li>1. Developing a forward model that can do transmission, emission, and reflection spectra simulations.</li>
+                <li>2. Retrievals using Bayesian nested sampling algorithms.</li>
+                <li>3. Collaborating with other group members to integrate ML retrieval into the code.</li>
+            </ul>
+        </li>
+        <!-- Add more projects here -->
+    </ul>
+</section>
+
+<section id="publications">
+    <h2>Publications</h2>
+    <ul>
+        <li><strong>Publication 1:</strong></li>
+        <!-- Add more publications as needed -->
+    </ul>
+</section>
+
+<section id="cv">
+    <h2>CV</h2>
+    <p><strong>EDUCATION:</strong></p>
+    <ul>
+        <li>M.Sc (Physical Sciences), IISER Thiruvananthapuram, 2023.</li>
+        <li>B.Sc (Major), Pragjyotish College (Affil: Gauhati University), 2021.</li>
+    </ul>
+    <p><strong>Current Position:</strong></p>
+    <ul>
+        <li>Project-Fellow, School of Earth and Planetary Sciences, NISER Bhubaneswar, July 2023 - Present.</li>
+    </ul>
+
+    <!-- Add more details about your CV here if needed -->
+</section>
+
+<section id="contact">
+    <h2>Contact</h2>
+    <p>Email: <a href="mailto:tonmoydeka241@gmail.com">tonmoydeka241@gmail.com</a></p>
+    <p>Phone: <a href="tel:+918474842018">+91 8474842018</a></p>
+</section>
+
+<section id="links">
+    <h2>Links</h2>
+    <ul>
+        <li><a href="https://www.linkedin.com/in/tonmoydeka" target="_blank">LinkedIn</a></li>
+        <!-- Add other relevant links -->
+    </ul>
+</section>
+
+<footer>
+    <p>&copy; 2024 Tonmoy Deka. All Rights Reserved.</p>
+</footer>
+
+</body>
+</html>
